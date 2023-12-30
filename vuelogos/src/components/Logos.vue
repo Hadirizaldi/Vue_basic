@@ -1,6 +1,6 @@
 <template>
   <div class="logos-wrapper">
-    <h2>Find Best Logo</h2>
+    <h2 class="title-header">Find Best Logo</h2>
     <div class=" list-logos">
       <div class="item-logos">
         <img class="logo" alt="Macintonsh-logo" src="../assets/macintosh-logo.png" />
@@ -10,6 +10,27 @@
       </div>
       <div class="item-logos">
         <img class="logo" alt="bts-logo" src="../assets/bts-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="Macintonsh-logo" src="../assets/macintosh-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="travel-logo" src="../assets/travel-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="bts-logo" src="../assets/bts-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="Macintonsh-logo" src="../assets/macintosh-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="travel-logo" src="../assets/travel-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="bts-logo" src="../assets/bts-logo.png" />
+      </div>
+      <div class="item-logos">
+        <img class="logo" alt="Macintonsh-logo" src="../assets/macintosh-logo.png" />
       </div>
     </div>
   </div>
@@ -23,17 +44,22 @@
 
 <style scoped>
   .logos-wrapper {
-    width: 70%;
+    width: 65%;
     margin: auto;
   }
 
+  .title-header{
+    text-align: left;
+  }
   .list-logos {
     display: flex;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 
     margin-block-start: 80px;
+    width: 100%;
   }
   .item-logos{
     width: 150px;
