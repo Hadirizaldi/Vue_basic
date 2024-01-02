@@ -1,10 +1,17 @@
 <template>
   <main>
     <div class="home">
+      <h3> {{counterData.title}} :</h3>
+  
       <div class="content">
         <button class="btn" @click="reduceCounter">-</button>
-        <span class="counter">{{counter}}</span>
+        <span class="counter">{{counterData.counter}}</span>
         <button class="btn" @click="addCounter">+</button>
+      </div>
+      
+      <div class="edit">
+        <h4>Edit counter title:</h4>
+        <input type="text" v-model="counterData.title">
       </div>
     </div>
   </main>
@@ -14,20 +21,25 @@
 
 <!-- ======== version 3.2 ++ ========= -->
 <script setup>
-  import {ref, onMounted} from 'vue'
+  import {reactive} from 'vue'
 
-  const counter = ref(0)
+  // const counter = ref(0),
+  //       counterTitle = ref('My Counter')
+
+  let counterData = reactive({
+    counter: 0,
+    title: "My Counter",
+  })
 
   function addCounter() {
-    counter.value++
+    // counter.value++
+    counterData.counter++
   }
   function reduceCounter() {
-    counter.value--
+    // counter.value--
+    counterData.counter--
   }
 
-onMounted(() => {
-  console.log(`The initial count is ${count.value}.`)
-})
 </script>
 
 <!-- ========= versoion 3.2 -- ========== -->
@@ -85,6 +97,13 @@ onMounted(() => {
   .home {
     width: 100%;
   }
+
+  h3{
+    text-align: center;
+    margin-block-start: 2rem;
+    font-size: 2.5rem;
+  }
+
   .content {
     display: flex;
     justify-content: center;
@@ -94,8 +113,21 @@ onMounted(() => {
   }
 
   .btn, .counter {
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 1rem;
   }
 
+  .edit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .3rem;
+
+    margin-block-start: 2rem;
+  }
+
+  .edit input{
+    font-size: 1.2rem;
+  }
 </style>
