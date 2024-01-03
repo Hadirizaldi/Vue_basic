@@ -1,14 +1,6 @@
 <template>
-    <button 
-    type="button"
-    class="inline-block rounded bg-sky-800/75 hover:bg-sky-500/100 custom-transition px-4 py-1 font-bold uppercase">
-    Edit
-  </button>
-  <button 
-    type="button"
-    class="inline-block rounded bg-red-800/60 hover:bg-red-500/100 custom-transition px-4 py-1 font-bold uppercase">
-    Delete
-  </button>
+  <ButtonEdit></ButtonEdit>
+  <ButtonDelete></ButtonDelete>
 </template>
 
 <style scoped>
@@ -17,3 +9,15 @@
     transition-timing-function: ease-in-out; /* Sesuaikan dengan timing function yang diinginkan */
   }
 </style>
+
+<script>
+  import ButtonEditVue from "../button/ButtonEdit.vue"
+  import ButtonDeleteVue from "../button/ButtonDelete.vue"
+
+  export default {
+    components : {
+      ButtonEdit : ButtonEditVue,
+      ButtonDelete : ButtonDeleteVue
+    }
+  }
+</script>
