@@ -1,6 +1,6 @@
 <template>
   <tr class="border-b dark:border-neutral-500">
-    <td class="whitespace-nowrap px-6 py-4 font-medium">{{todo.id}}</td>
+    <td class="whitespace-nowrap px-6 py-4 font-medium">{{no}}</td>
     <td class="whitespace-nowrap px-6 py-4">{{ todo.task }}</td>
     <td class="whitespace-nowrap px-6 py-4">{{ todo.status }}</td>
     <td class="whitespace-nowrap px-6 py-4">
@@ -22,6 +22,10 @@ import TableButtonVue from '@/components/table/TableButton.vue';
       todo : {
         type : Object,
         required : true
+      },
+      no : {
+        type : Number,
+        required: true
       }
     },
   }

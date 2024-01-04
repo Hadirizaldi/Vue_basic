@@ -1,6 +1,6 @@
 <template>
   <tbody>
-    <TodoRow v-for="(todo, index) in getTodos" :key="index" :todo="todo"/>
+    <TodoRow v-for="(todo, index) in getTodos" :key="index" :todo="todo" :no ="index+1"/>
   </tbody>
 </template>
 
