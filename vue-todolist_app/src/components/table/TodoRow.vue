@@ -1,28 +1,8 @@
 <template>
   <tr class="border-b dark:border-neutral-500">
-    <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
-    <td class="whitespace-nowrap px-6 py-4">Menyelesaikan Website App Todo</td>
-    <td class="whitespace-nowrap px-6 py-4">Belum Selesai</td>
-    <td class="whitespace-nowrap px-6 py-4">
-      <div class="flex gap-2 justify-center">
-        <tableButton></tableButton>
-      </div>
-    </td>
-  </tr>
-  <tr class="border-b dark:border-neutral-500">
-    <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
-    <td class="whitespace-nowrap px-6 py-4">Menyelesaikan Mobile App Todo</td>
-    <td class="whitespace-nowrap px-6 py-4">Belum Selesai</td>
-    <td class="whitespace-nowrap px-6 py-4">
-      <div class="flex gap-2 justify-center">
-        <tableButton></tableButton>
-      </div>
-    </td>
-  </tr>
-  <tr class="border-b dark:border-neutral-500">
-    <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
-    <td class="whitespace-nowrap px-6 py-4">Menyelesaikan Algoritma Todo</td>
-    <td class="whitespace-nowrap px-6 py-4">Selesai</td>
+    <td class="whitespace-nowrap px-6 py-4 font-medium">{{todo.id}}</td>
+    <td class="whitespace-nowrap px-6 py-4">{{ todo.task }}</td>
+    <td class="whitespace-nowrap px-6 py-4">{{ todo.status }}</td>
     <td class="whitespace-nowrap px-6 py-4">
       <div class="flex gap-2 justify-center">
         <tableButton></tableButton>
@@ -32,10 +12,17 @@
 </template>
 
 <script>
-import TableButtonVue from './TableButton.vue';
-  export default{
+import TableButtonVue from '@/components/table/TableButton.vue';
+  export default {
     components : {
       tableButton : TableButtonVue
-    }
+    },
+
+    props : {
+      todo : {
+        type : Object,
+        required : true
+      }
+    },
   }
 </script>
