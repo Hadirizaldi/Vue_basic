@@ -5,7 +5,7 @@
     <td class="whitespace-nowrap px-6 py-4">{{ todo.status }}</td>
     <td class="whitespace-nowrap px-6 py-4">
       <div class="flex gap-2 justify-center">
-        <ButtonEdit></ButtonEdit>
+        <ButtonEdit :todo="todo"></ButtonEdit>
         <ButtonDelete></ButtonDelete>
       </div>
     </td>

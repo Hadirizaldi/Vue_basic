@@ -1,16 +1,26 @@
 <template>
-  <router-link :to="{ name: 'edit'}">
-    <button 
+  <router-link :to="{ name: 'edit', params: {id: todo.id} }">
+    <BaseButton
       type="button"
-      class="inline-block rounded bg-sky-800/75 hover:bg-sky-500/100 custom-transition px-4 py-1 font-bold uppercase">
+      baseClass="inline-block rounded bg-sky-800/75 hover:bg-sky-500/100 custom-transition px-4 py-1 font-bold uppercase">
       Edit
-    </button>
+    </BaseButton>
   </router-link>
+
 </template>
 
-<style scoped>
-  .custom-transition {
-    transition-duration: 0.3s; /* Sesuaikan dengan durasi yang diinginkan */
-    transition-timing-function: ease-in-out; /* Sesuaikan dengan timing function yang diinginkan */
+<script>
+import BaseButtonVue from './BaseButton.vue';
+export default {
+  components: {
+    BaseButton : BaseButtonVue
+  },
+  props : {
+    todo : {
+      type : Object,
+      required : true
+    }
   }
-</style>
+}
+</script>
+
