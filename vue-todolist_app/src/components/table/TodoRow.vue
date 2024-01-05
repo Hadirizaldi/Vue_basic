@@ -13,6 +13,7 @@
 
 <script>
 import TableButtonVue from '@/components/table/TableButton.vue';
+
   export default {
     components : {
       tableButton : TableButtonVue
@@ -23,6 +24,7 @@ import TableButtonVue from '@/components/table/TableButton.vue';
         type : Object,
         required : true
       },
+      
       no : {
         type : Number,
         required: true

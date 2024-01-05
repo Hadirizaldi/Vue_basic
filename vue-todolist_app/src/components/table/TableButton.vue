@@ -1,6 +1,6 @@
 <template>
-  <ButtonEdit></ButtonEdit>
-  <ButtonDelete></ButtonDelete>
+  <ButtonEdit @click="handleEdit"></ButtonEdit>
+  <ButtonDelete @click="handleDelete"></ButtonDelete>
 </template>
 
 <style scoped>
@@ -18,6 +18,16 @@
     components : {
       ButtonEdit : ButtonEditVue,
       ButtonDelete : ButtonDeleteVue
+    },
+
+    methods : {
+      handleDelete () {
+        console.log("Tombol delete")
+      },
+
+      handleEdit(){
+        console.log("Tombol edit")
+      }
     }
   }
 </script>
