@@ -30,9 +30,15 @@ export const useTodoStore = defineStore("Todo", {
   },
   actions: {
     async getTodoById(id) {
-      return this.todos.find(function (todo) {
-        return todo.id === id;
-      });
+      return this.todos.find((todo) => todo.id === id);
+    },
+
+    async updateTodo(updateTodo) {
+      const index = this.todos.findIndex((todo) => todo.id === updateTodo.id);
+
+      if (index > 0) {
+        this.todos.splice(index, 1, updateTodo);
+      }
     },
   },
 });

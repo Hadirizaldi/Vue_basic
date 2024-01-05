@@ -7,19 +7,16 @@
     <br>
     <label>Status:</label>
     <input v-model="editedTodo.status" required class="text-zinc-950">
-    <!-- <button @click="updateTodo">Update</button> -->
+    <button @click="updateTodo">Update</button>
   </div>
 </template>
 
 <script>
 import { useTodoStore } from '@/store/Todo';
 import { onBeforeMount, ref } from 'vue';
+import { useRouter } from "vue-router";
 
 export default {
-  // components: {
-  //   FormComponent : FormComponentVue
-  // },
-
   props : {
     id : {
       type : String,
@@ -31,6 +28,7 @@ export default {
     const todoStore = useTodoStore();
     const editedTodo = ref({ id: '', task: '', status: '' });
     const todoId = parseInt(props.id , 10)
+    const router = useRouter()
 
     onBeforeMount(async() => {
       console.log('Before getTodoById');
@@ -38,8 +36,15 @@ export default {
       console.log('After getTodoById', editedTodo.value);
     });
 
+    const updateTodo = async () => {
+      await todoStore.updateTodo(editedTodo.value)
+
+      router.push({ name: 'home' });
+    }
+
     return {
-      editedTodo
+      editedTodo,
+      updateTodo
     }
   },
 
