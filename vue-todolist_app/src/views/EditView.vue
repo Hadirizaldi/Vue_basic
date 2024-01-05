@@ -2,19 +2,18 @@
   <div>
     <h1>Edit View</h1>
     <p>ID: {{ editedTodo.id }}</p>
-    <!-- <label>Task:</label>
+    <label>Task:</label>
     <input v-model="editedTodo.task" required class="text-zinc-950">
     <br>
     <label>Status:</label>
-    <input v-model="editedTodo.status" required class="text-zinc-950"> -->
+    <input v-model="editedTodo.status" required class="text-zinc-950">
     <!-- <button @click="updateTodo">Update</button> -->
   </div>
 </template>
 
 <script>
 import { useTodoStore } from '@/store/Todo';
-import { onMounted, ref } from 'vue';
-// import FormComponentVue from "@/components/form/FormComponent.vue"
+import { onBeforeMount, ref } from 'vue';
 
 export default {
   // components: {
@@ -30,10 +29,10 @@ export default {
 
   setup(props) {
     const todoStore = useTodoStore();
-    const editedTodo = ref(null);
+    const editedTodo = ref({ id: '', task: '', status: '' });
     const todoId = parseInt(props.id , 10)
 
-    onMounted(async() => {
+    onBeforeMount(async() => {
       console.log('Before getTodoById');
       editedTodo.value = await todoStore.getTodoById(todoId);
       console.log('After getTodoById', editedTodo.value);
