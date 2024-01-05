@@ -1,5 +1,5 @@
 <template>
-  <Home></Home>
+  <RouterView></RouterView>
 </template>
 
 <!-- ======== compositon api versi > 3.2 ======== -->
