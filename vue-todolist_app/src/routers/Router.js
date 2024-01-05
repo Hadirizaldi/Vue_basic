@@ -14,6 +14,7 @@ const routes = [
     name: "edit",
     path: "/edit/:id",
     component: EditView,
+    props: true,
   },
 ];
 

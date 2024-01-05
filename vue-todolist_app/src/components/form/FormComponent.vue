@@ -7,7 +7,7 @@
         <form @submit.prevent="saveChanges">
           <div class="mb-4">
             <label for="task" class="block text-sm font-medium text-gray-600">Task:</label>
-            <input v-model="editedTodo.task" type="text" id="task" name="task" class="mt-1 p-2 border rounded w-full" />
+            <input v-model="editedTodo.task" type="text" id="task" value= "todo.task" name="task" class="mt-1 p-2 border rounded w-full" />
           </div>
 
           <div class="mb-4">

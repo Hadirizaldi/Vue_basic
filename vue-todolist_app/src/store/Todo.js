@@ -28,5 +28,11 @@ export const useTodoStore = defineStore("Todo", {
       return this.todos;
     },
   },
-  actions: {},
+  actions: {
+    async getTodoById(id) {
+      return this.todos.find(function (todo) {
+        return todo.id === id;
+      });
+    },
+  },
 });
